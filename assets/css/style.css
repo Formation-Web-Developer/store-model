@@ -1,0 +1,457 @@
+@font-face{
+    font-family: 'Monstserrat Regular';
+    src: url('../font/Montserrat-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body, input, button{
+    font-family: 'Monstserrat Regular';
+    color: rgb(102, 102, 102);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* MENU */
+
+.menu{
+    background-color: black;
+    color: white;
+
+    font-size: 2rem;
+    padding: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+
+    z-index: 10;
+    width: 100%;
+}
+
+#sidebar, .menu > label{
+    display: none;
+}
+
+.sidebar{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0;
+    transition: .5s;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#sidebar:checked ~ .sidebar{
+    width: 100%;
+}
+
+#sidebar:not(:checked) ~ .burger{
+    display: block;
+}
+
+#sidebar:checked ~ .cross{
+    display: block;
+}
+
+.sidebar-item, .misc-item{
+    display: block;
+    color: rgb(179, 179, 179);
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+
+.sidebar-category-items{
+    padding: 1rem 2rem;
+}
+
+.sidebar-misc{
+    border-top: 1px solid rgb(179, 179, 179);
+    margin: 1rem auto;
+    padding-top: 1rem;
+    width: 90%;
+}
+
+.misc-item{
+    font-size: .8rem;
+}
+
+.category-active{
+    font-weight: 600;
+}
+
+.active{
+    background-color: rgb(179, 179, 179);
+    color: black;
+}
+
+/* PAGE */
+
+.page{
+    width: 100%;
+    padding: 0 .5rem;
+    margin-top: 3rem;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+h1, h2, h3{
+    font-weight: normal;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+/* COLLECTION */
+.collection{
+    position: relative;
+}
+
+.collection-misc{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+}
+
+.collection-misc h2, .collection-misc h3, .collection-misc a{
+    margin: 1rem 0;
+}
+
+.collection-misc h2{
+    font-size: 2rem;
+}
+
+.collection-misc h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.collection-misc a{
+    background-color: black;
+    display: block;
+    width: fit-content;
+    padding: .5rem .7rem;
+    color: white;
+    font-size: .7rem;
+}
+
+/* Articles */
+.article-count{
+    font-size: .8rem;
+    color: rgb(168, 167, 167);
+    margin: .5rem 0;
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article{
+    width: 50%;
+    padding: .2rem;
+    position: relative;
+}
+
+.article figcaption{
+    font-style: 1.5rem;
+    padding-top: .6rem;
+}
+
+.price{
+    padding-bottom: .6rem;
+    color: black;
+}
+
+.article span{
+    position: absolute;
+    top: .2rem;
+    background-color: black;
+    color: white;
+    padding: .2rem;
+}
+
+.price-sale{
+    color: rgba(190, 42, 42, 0.644);
+}
+
+/* SUBSCRIBE */
+#subscribe{
+    background-color: black;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+#subscribe h2{
+    font-size: 2rem;
+}
+
+#subscribe p{
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+#subscribe form{
+    display: flex;
+    flex-direction: column;
+}
+
+#subscribe form input{
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 1rem;
+}
+
+#subscribe form button{
+    margin-top: .5rem;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: fit-content;
+}
+
+/* Page Footer */
+
+.page footer{
+    background-color: #c4c4c4;
+    padding: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Contact */
+
+#contact, #about, #store{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#contact{
+    width: 100%;
+}
+
+#about, #store{
+    width: 50%;
+}
+
+section h2{
+    font-size: 1.5rem;
+}
+
+#contact p, #about a{
+    font-size: .8rem;
+    margin: 1rem 0;
+}
+
+#contact form{
+    display: flex;
+    flex-direction: column;
+}
+
+#contact input{
+    border: 1px solid #acacac;
+    margin: 0 auto;
+    margin-bottom: .5rem;
+    width: 90%;
+    height: 2rem;
+    padding: .5rem;
+}
+
+#contact button{
+    font-size: 1.1rem;
+    width: 90%;
+    margin: auto;
+    border: none;
+    height: 2rem;
+    background-color: black;
+    color: white;
+}
+
+/* About */
+
+#about a{
+    color: black;
+    display: block;
+    text-decoration: underline;
+}
+
+#about a{
+    margin: .7rem 0;
+}
+
+/* STORE */
+
+.store{
+    margin: .7rem 0;
+}
+
+.social{
+    padding-top: 1rem;
+}
+
+#store p{
+    font-size: .7rem;
+}
+
+/* Footer */
+
+body > footer{
+    background-color: black;
+    text-align: center;
+    padding-top: 1rem;
+    height: 5rem;
+    color: white;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px){
+    /* BODY */
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* MENU */
+    .menu{
+        position: initial;
+        width: 20%;
+        background-color: transparent;
+        color: black;
+        flex-direction: column;
+        justify-content: initial;
+        padding-top: 1rem;
+    }
+
+    .menu > .burger, .menu > .cross{
+        display: none!important;
+    }
+
+    .sidebar{
+        width: 100%;
+        position: initial;
+        background-color: white;
+        margin-top: 4rem;
+    }
+
+    .sidebar a{
+        color: rgb(102, 102, 102);
+    }
+
+    .sidebar .category-active{
+        color: black;
+    }
+
+    .sidebar .active{
+        color: black;
+    }
+
+    .sidebar-misc{
+        border-top: none;
+        width: 100%;
+    }
+
+    /* PAGE */
+    .page{
+        width: 80%;
+        margin-top: 0;
+    }
+
+    /* COLLECTION */
+
+    .collection-misc h2{
+        font-size: 3rem;
+    }
+    
+    .collection-misc h3{
+        font-size: 1.7rem;
+    }
+
+    .collection-misc a{
+        font-size: 1rem;
+    }
+
+    /* Articles */
+    .article{
+        width: 25%;
+    }
+
+    /* PAGE FOOTER */
+
+    #about, #store{
+        width: 30%;
+    }
+
+    #about a{
+        color: rgb(102, 102, 102);
+    }
+
+    #contact{
+        width: 40%;
+    }
+
+    #store h2, .social{
+        text-align: left;
+    }
+
+    .store{
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .store i{
+        margin-right: .5rem;
+    }
+
+    /* FOOTER */
+
+    body > footer{
+        width: 100%;
+    }
+
+    body > footer div{
+        width: 80%;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    main{
+        width: 80%;
+        margin: auto;
+    }
+}
